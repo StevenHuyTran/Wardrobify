@@ -1,3 +1,34 @@
+# Person 1 Steven Tran
+# Approach to microservice and poller: I will implement RESTful API, poller, and React components for HATS.
+
+
+# There are TWO Hats microservice.
+# To do list:
+
+# For hats/api
+# Create these
+# Urls
+# Views
+# Models
+
+
+# For hats/polls
+# Need to pull Location data from the Wardrobe API
+
+The Hat resource should track its fabric, its style name, its color, a URL for a picture, and the location in the wardrobe where it exists.
+
+You must create RESTful APIs to get a list of hats, create a new hat, and delete a hat.
+You must create React component(s) to show a list of all hats and their details.
+You must create React component(s) to show a form to create a new hat.
+You must provide a way to delete a hat.
+You must route the existing navigation links to your components.
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
