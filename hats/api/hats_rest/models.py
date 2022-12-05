@@ -17,7 +17,7 @@ class LocationVO(models.Model):
 
 class Hat(models.Model):
     fabric = models.CharField(max_length=100)
-    style_name = models.CharField(max_length=100, unique=True)
+    style_name = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
     picture_url = models.URLField(null=True, blank=True)
     location = models.ForeignKey(
