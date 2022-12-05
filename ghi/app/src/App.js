@@ -1,11 +1,15 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainPage from './MainPage';
+import Nav from './Nav';
+import ShoesForm from './ShoesForm';
+import ShoesList from './ShoesList';
 import HatsList from "./HatsList";
-import MainPage from "./MainPage";
-import Nav from "./Nav";
 import HatsForm from "./HatsForm";
 
+
+
 function App(props) {
-  if (props.hats === undefined) {
+  if (props.shoes === undefined && props.hats === undefined) {
     return null;
   }
 
@@ -15,6 +19,10 @@ function App(props) {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="shoes">
+            <Route index element={<ShoesList shoes={props.shoes}/>} />
+            <Route path="new" element={<ShoesForm /> } />  
+          </Route>
           <Route path="hats" element={<HatsList hats={props.hats} />} />
           <Route path="hats/new" element={<HatsForm />} />
         </Routes>

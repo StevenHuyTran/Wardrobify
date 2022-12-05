@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from .models import Shoe, BinVO
 from django.views.decorators.http import require_http_methods
-import json
+from django.http import JsonResponse
 from common.json import ModelEncoder
-from .models import BinVO, Shoe
+import json
 
-# Create your views here.
+
 class BinVOEncoder(ModelEncoder):
     model = BinVO
     properties = [
@@ -13,18 +13,6 @@ class BinVOEncoder(ModelEncoder):
         "closet_name"
     ]
 
-class ShoeListEncoder(ModelEncoder):
-    model = Shoe
-    properties = [
-        "manufacturer",
-        "model_name",
-        "color",
-        "picture_url",
-        "id",
-    ]
-
-    def get_extra_data(self, o):
-        return {"bin": o.bin.closet_name}
 
 class ShoeDetailEncoder(ModelEncoder):
     model = Shoe
@@ -34,6 +22,20 @@ class ShoeDetailEncoder(ModelEncoder):
         "color",
         "picture_url",
         "bin",
+    ]
+    encoders = {
+        "bin": BinVOEncoder()
+    }
+
+
+class ShoeListEncoder(ModelEncoder):
+    model = Shoe
+    properties = [
+        "manufacturer",
+        "model_name",
+        "color",
+        "picture_url",
+        "id",
     ]
     encoders = {
         "bin": BinVOEncoder()
@@ -69,3 +71,32 @@ def api_list_shoes(requests, bin_vo_id=None):
         )
 
 
+@require_http_methods({"GET", "DELETE", "PUT"})
+def api_show_shoe(requests, pk):
+    if requests.method == "GET":
+        try:
+            shoe = Shoe.objects.get(id=pk)
+            return JsonResponse(
+                shoe,
+                encoder=ShoeDetailEncoder,
+                safe=False,
+            )
+        except Shoe.DoesNotExist:
+            return JsonResponse(
+                {"message": "invalid shoe id"},
+                status=400,
+            )
+    elif requests.method == "DELETE":
+        count, _ = Shoe.objects.filter(id=pk).delete()
+        return JsonResponse(
+            {"Bye!": count > 0}
+        )
+    else:
+        content = json.loads(requests.body)
+        Shoe.objects.filter(id=pk).update(**content)
+        shoe = Shoe.objects.get(id=pk)
+        return JsonResponse(
+            shoe,
+            encoder=ShoeDetailEncoder,
+            safe=False,
+        )

@@ -9,6 +9,21 @@ root.render(
   </React.StrictMode>
 );
 
+async function loadShoes() {
+  const shoeResponse = await fetch('http://localhost:8080/api/shoes/');
+
+  if(shoeResponse.ok) {
+    const shoeData = await shoeResponse.json();
+    root.render(
+      <App shoes={shoeData.shoes} />
+    );
+  }
+  else {
+    console.log("Error!")
+  }
+}
+loadShoes();
+
 async function loadHats() {
   const hatsResponse = await fetch("http://localhost:8090/api/hats/");
   // console.log(hatsResponse);
