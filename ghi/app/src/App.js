@@ -21,7 +21,7 @@ function App(props) {
           <Route path="/" element={<MainPage />} />
           <Route path="shoes">
             <Route index element={<ShoesList shoes={props.shoes}/>} />
-            <Route path="new" element={<ShoesForm /> } />  
+            <Route path="new" element={<ShoesForm /> } />
           </Route>
           <Route path="hats" element={<HatsList hats={props.hats} />} />
           <Route path="hats/new" element={<HatsForm />} />
@@ -32,21 +32,3 @@ function App(props) {
 }
 
 export default App;
-
-// return (
-//   <BrowserRouter>
-//     <Nav />
-//     <div className="container">
-//       <Routes>
-//         <Route path="/" element={<MainPage />} />
-//         <Route path="hats">
-//           <Route path="" element={<HatsList hats={props.hats} />} />
-//           <Route path="new" element={<HatsForm />} />
-//         </Route>
-//       </Routes>
-//     </div>
-//   </BrowserRouter>
-// );
-// }
-
-// export default App;
