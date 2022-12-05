@@ -14,8 +14,7 @@ microservice, here.
 
 ## Hats microservice
 
-Explain your models and integration with the wardrobe
-microservice, here.
+This microservice contains a model called Hat which allows users to add an instance of Hat Model with the following attributes: fabric, style name, color, picture, and the location of the hat in the wardrobe. The location is a value object that is polled from the Wardrobe API that also polls these attributes: closet name, bin number, bin size, and import href.
 
 ## Step-by-step Instructions to run project.
 
