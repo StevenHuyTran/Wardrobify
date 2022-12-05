@@ -14,7 +14,7 @@ microservice, here.
 
 ## Hats microservice
 
-This microservice contains a model called Hat which allows users to add an instance of Hat Model with the following attributes: fabric, style name, color, picture, and the location of the hat in the wardrobe. The location is a value object that is polled from the Wardrobe API that also polls these attributes: closet name, bin number, bin size, and import href.
+This microservice contains a model called Hat which allows users to add an instance of Hat Model with the following attributes: fabric, style name, color, picture, and the location of the hat in the wardrobe. The location is a value object that is polled from the Wardrobe API that also polls these attributes: closet name, bin number, bin size, and import href. Value Objects are neccessary because they represent a copy of the data represented in the monolith. This allows a way for microservices to access that data without manipulating the original data but still make new instances and model objects of that data.
 
 ## Step-by-step Instructions to run project.
 
