@@ -11,6 +11,7 @@ class ShoesForm extends React.Component {
             picture_url: "",
             bin: "",
             bins: [],
+            hasCreatedShoe: false,
         }
     }
 
@@ -18,6 +19,7 @@ class ShoesForm extends React.Component {
         event.preventDefault();
         const data = {...this.state};
         delete data.bins;
+        delete data.hasCreatedShoe;
         
         const shoesUrl = "http://localhost:8080/api/shoes/";
         const fetchConfig = {
@@ -37,6 +39,7 @@ class ShoesForm extends React.Component {
                 color: "",
                 picture_url: "",
                 bin: "",
+                hasCreatedShoe: true,
             };
             this.setState(cleared);
             window.location.href="/shoes"
@@ -59,6 +62,13 @@ class ShoesForm extends React.Component {
     }
     
     render() {
+      let messageClasses = "alert alert-success d-none mb-0";
+      let formClasses = "";
+      if (this.state.hasCreatedShoe) {
+        messageClasses = "alert alert-success mb-0";
+        formClasses = "d-none";
+      }
+
         return (
             <div className="row">
             <div className="offset-3 col-6">
@@ -95,6 +105,12 @@ class ShoesForm extends React.Component {
                   </div>
                   <button className="btn btn-primary">Create</button>
                 </form>
+                <div>
+              <p> </p>
+            </div>
+            <div className={messageClasses} id="success-message">
+              Hat successfully created!
+            </div>
               </div>
             </div>
           </div>
