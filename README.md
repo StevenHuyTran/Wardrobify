@@ -166,4 +166,4 @@ Polling Service
 - [x] Hat locations should be populated with LocationVOs from hats api, not Locations from wardrobe api
 
 - Diagram
-  ![picture-of-diagram](/microservice-two-shot/Untitled-2022-12-02-0803.png)
+  ![picture-of-diagram](https://gitlab.com/stevenhuytran03/microservice-two-shot/-/blob/main/Diagram%20Overview.png)
