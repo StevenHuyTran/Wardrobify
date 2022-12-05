@@ -3,16 +3,60 @@
 Team:
 
 - Person 1 - Which microservice? STEVEN
-- Person 2 - Which microservice? Elviza/Shoes
+- Elviza Fallon-Hanify - Shoes microservice
 
 
 
 ## Design
 
 ## Shoes microservice
+## Shoes Step by Step Installation and getting started
 
-Explain your models and integration with the wardrobe
-microservice, here.
+1. Fork the repository https://gitlab.com/stevenhuytran03/microservice-two-shot
+2. Select clone with HTTPS, and copy the link
+3. Clone the repo using Terminal: git clone "repo-link"
+4. Change your directory to the newly cloned repo: cd "repo-name"
+5. To open project in VSCODE : code .
+6. Run : docker volume create pgdata
+         docker-compose build
+         docker-compose up
+7. If you run docker-compose up and if you're on macOS, you'll see a warning about an
+   environment variable named OS being missing. You can safely ignore this.
+8. Once docker is up and running, go to http://localhost:3000/ to see the web app.
+
+## Insomnia for Shoes Microservice
+1. Creating bins:
+  - POST: http://localhost:8100/api/bins/
+  - Layout for JSON body: {
+	"closet_name": "fill in name here",
+	"bin_number": "fill in number",
+	"bin_size": "fill in number
+}
+2. Checking list of bins:
+  - GET: http://localhost:8100/api/bins/
+  - Layout for body: none
+3. Checking list of Shoes:
+  - GET: http://localhost:8080/api/shoes/
+  - Layout for body: none
+4. Creating shoes:
+  - POST: http://localhost:8080/api/shoes/
+  - Layout for JSON body: {
+	"manufacturer": "fill in manufacturer here",
+	"model_name": "fill in model name here",
+	"color": "fill in color here",
+	"picture_url": "fill in picture adress here",
+	"bin": "fill in bin info here"
+}
+5. Checking particular shoes details:
+  - GET: http://localhost:8080/api/shoes/"fill in bin id here"/
+  - Layout for body: none
+6. Delete particular shoes:
+  - DELETE: http://localhost:8080/api/shoes/"fill in bin id here"/
+  - Layout for body: none
+
+
+
+
 
 ## Hats microservice
 
