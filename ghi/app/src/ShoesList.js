@@ -61,7 +61,7 @@ function ShoesList() {
                 </td>
                 <td>{shoe.bin.bin_number}</td>
                 <td>
-                  <button onClick={deleteShoe(shoe.id)} className="btn btn danger">
+                  <button onClick={deleteShoe(shoe.id)} className="btn btn-danger">
                     Delete
                   </button>
                 </td>
