@@ -1,23 +1,37 @@
-import React, { useState, setItems } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import "./index.css";
 
-function HatsList(props) {
-  const [items, setItems] = React.useState(props.hats);
-  const deleteItem = (id) => async () => {
-    const url = `http://localhost:8090/api/hats/${id}`;
-    const fetchConfig = {
-      method: "delete",
-    };
-    const response = await fetch(url, fetchConfig);
+function HatsList() {
+  const [hats, setHats] = useState([]);
+  const getHats = async () => {
+    const hatsUrl = "http://localhost:8090/api/hats/";
+    const response = await fetch(hatsUrl);
+
     if (response.ok) {
-      const deleted = await response.json();
+      const listHats = await response.json();
+      setHats(listHats.hats);
     }
-    setItems((items) =>
-      items.filter((item) => {
-        return item.id !== id;
-      })
-    );
   };
+  useEffect(() => {
+    getHats();
+  }, []);
+  const deleteHat = (id) => async () => {
+    try {
+      const url = `http://localhost:8090/api/hats/${id}/`;
+      const deleteResponse = await fetch(url, {
+        method: "delete",
+      });
+      if (deleteResponse.ok) {
+        const refreshUrl = "http://localhost:8090/api/hats/";
+        const reloadResponse = await fetch(refreshUrl);
+        const newHats = await reloadResponse.json();
+        setHats(newHats.hats);
+      }
+    } catch (err) {}
+  };
+  if (hats === undefined) {
+    return null;
+  }
 
   return (
     <>
@@ -29,25 +43,22 @@ function HatsList(props) {
             <th>Color</th>
             <th>Picture</th>
             <th>Location</th>
-            <th></th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-          {items.map((hat) => {
+          {hats.map((hats) => {
             return (
-              <tr key={hat.id}>
-                <td>{hat.fabric}</td>
-                <td>{hat.style_name}</td>
-                <td>{hat.color}</td>
-                <td>{hat.location.closet_name}</td>
+              <tr key={hats.id}>
+                <td>{hats.fabric}</td>
+                <td>{hats.style_name}</td>
+                <td>{hats.color}</td>
                 <td>
-                  <img src={hat.picture_url} width="100" />
+                  <img src={hats.picture_url} />
                 </td>
+                <td>{hats.location}</td>
                 <td>
-                  <button
-                    className="btn btn-danger"
-                    onClick={deleteItem(hat.id)}
-                  >
+                  <button className="circle" onClick={deleteHat(hats.id)}>
                     Delete
                   </button>
                 </td>
@@ -56,11 +67,7 @@ function HatsList(props) {
           })}
         </tbody>
       </table>
-      <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <Link to="/hats/new" className="btn btn-primary btn-lg px-4 gap-3">
-          Create a new hat
-        </Link>
-      </div>
+      <div className="d-grid gap-2 d-sm-flex justify-content-sm-center"></div>
     </>
   );
 }

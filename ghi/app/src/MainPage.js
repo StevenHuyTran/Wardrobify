@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function MainPage() {
   return (
@@ -6,18 +6,18 @@ function MainPage() {
       <h1 className="display-5 fw-bold">WARDROBIFY!</h1>
       <div className="col-lg-6 mx-auto">
         <p className="lead mb-4">
-          Need to keep track of your shoes and hats? We have
-          the solution for you!
+          Need to keep track of your shoes and hats? We have the solution for
+          you!
         </p>
       </div>
-      <div className="row justify-content-evenly">
+      {/* <div className="row justify-content-evenly">
         <div className="col-6 col-sm-4 shadow p-3 mb-5 bg-dark rounded">
         <Link to="/shoes">
             <img src="/shoes.jpg" className="img-fluid" alt="shoesImage"/>
-          </Link> 
+          </Link>
      </div>
-   </div>
-  </div>
+   </div> */}
+    </div>
   );
 }
 

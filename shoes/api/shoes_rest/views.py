@@ -10,7 +10,9 @@ class BinVOEncoder(ModelEncoder):
     model = BinVO
     properties = [
         "import_href",
-        "closet_name"
+        "closet_name",
+        "bin_number",
+        "bin_size",
     ]
 
 
@@ -36,6 +38,7 @@ class ShoeListEncoder(ModelEncoder):
         "color",
         "picture_url",
         "id",
+        "bin",
     ]
     encoders = {
         "bin": BinVOEncoder()

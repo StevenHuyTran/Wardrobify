@@ -11,8 +11,8 @@ class LocationVO(models.Model):
     shelf_number = models.PositiveSmallIntegerField()
     import_href = models.CharField(max_length=300, null=True, blank=True, unique=True)
 
-    def __str__(self):
-        return self.closet_name
+    # def __str__(self):
+    #     return self.closet_name
 
 
 class Hat(models.Model):
@@ -26,5 +26,5 @@ class Hat(models.Model):
         on_delete=models.PROTECT,
     )
 
-    def __str__(self):
-        return "Location VO ID : " + str(self.id) + " " + self.closet_name
+    # def __str__(self):
+    #     return "Location VO ID : " + str(self.id) + " " + self.closet_name

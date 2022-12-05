@@ -20,8 +20,8 @@ def get_bins():
     print("<<<Shoes>>>")
     for bin in content["bins"]:
         BinVO.objects.update_or_create(
+            import_href=bin["href"],
             defaults={
-                "import_href": bin["href"],
                 "closet_name": bin["closet_name"],
                 "bin_number": bin["bin_number"],
                 "bin_size": bin["bin_size"],
@@ -35,7 +35,6 @@ def poll():
         try:
             # Write your polling logic, here
             get_bins()
-            pass
         except Exception as e:
             print(e, file=sys.stderr)
         time.sleep(60)

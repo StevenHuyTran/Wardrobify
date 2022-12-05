@@ -10,8 +10,8 @@ class BinVO(models.Model):
     bin_size = models.PositiveSmallIntegerField()
     import_href = models.CharField(max_length=50, unique=True, blank=True, null = True)
 
-    def __str__(self):
-        return self.closet_name
+    # def __str__(self):
+    #     return self.closet_name
 
 
 class Shoe(models.Model):
@@ -25,8 +25,8 @@ class Shoe(models.Model):
         on_delete=models.CASCADE,
     )
 
-    def __str__(self):
-        return self.model_name
+    # def __str__(self):
+    #     return self.model_name
 
-    def get_api_url(self):
-        return reverse("api_show_shoe", kwargs={"pk": self.pk})
+    # def get_api_url(self):
+    #     return reverse("api_show_shoe", kwargs={"pk": self.pk})
