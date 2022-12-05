@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function HatsList(props) {
   const [items, setItems] = React.useState(props.hats);
   const deleteItem = (id) => async () => {
-    const url = `http://localhost:8090/api/hats/${id}`;
+    const url = `http://localhost:8090/api/hats/${id}/`;
     const fetchConfig = {
       method: "delete",
     };
