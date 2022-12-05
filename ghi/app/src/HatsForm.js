@@ -50,6 +50,7 @@ class HatsForm extends React.Component {
       };
 
       this.setState(cleared);
+      window.location.href = "/hats";
     }
   }
 

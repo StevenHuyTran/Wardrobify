@@ -1,4 +1,4 @@
-import React from "react"  
+import React from "react"
 
 
 class ShoesForm extends React.Component {
@@ -18,7 +18,7 @@ class ShoesForm extends React.Component {
         event.preventDefault();
         const data = {...this.state};
         delete data.bins;
-        
+
         const shoesUrl = "http://localhost:8080/api/shoes/";
         const fetchConfig = {
             method: "post",
@@ -28,7 +28,7 @@ class ShoesForm extends React.Component {
             },
         };
         const response = await fetch(shoesUrl, fetchConfig);
-        
+
         if (response.ok) {
             const newShoe = await response.json();
             const cleared = {
@@ -45,7 +45,7 @@ class ShoesForm extends React.Component {
 
     handleInputChange = (event) => {
         const name = event.target.name;
-        const value = event.target.value;    
+        const value = event.target.value;
         this.setState({...this.state, [name]: value})
     }
 
@@ -57,7 +57,7 @@ class ShoesForm extends React.Component {
             this.setState({bins: data.bins})
         }
     }
-    
+
     render() {
         return (
             <div className="row">
