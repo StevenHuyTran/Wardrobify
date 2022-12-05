@@ -66,9 +66,9 @@ Use these docker commands in your terminal if neccessary.
 
 ## URLS and PORTS
 
-Use the following urls for Insomnia. Each request should have these respective urls in insomnia.
+Use the following urls for Insomnia. Each request should have these respective endpoints in insomnia.
 
-## Urls for Hats Microservice
+## RESTful API endpoits: HATS
 
 UPDATE HAT- PUT REQUEST ============> http://localhost:8090/api/hats/<int:pk>/
 
@@ -166,4 +166,5 @@ Polling Service
 - [x] Hat locations should be populated with LocationVOs from hats api, not Locations from wardrobe api
 
 - Diagram
+
   ![picture-of-diagram](https://gitlab.com/stevenhuytran03/microservice-two-shot/-/blob/main/Diagram%20Overview.png)
