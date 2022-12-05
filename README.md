@@ -124,5 +124,5 @@ Hats Resource
 [x]DELETE request to API should respond with appropriate status code
 
 Polling Service
-[x]It should work and create the appropriate Value Objects for the service--
+[x]It should work and create the appropriate Value Objects for the service--my branch
 [x]Hat locations should be populated with LocationVOs from hats api, not Locations from wardrobe api
