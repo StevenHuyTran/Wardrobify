@@ -57,11 +57,11 @@ function ShoesList() {
                 <td>{shoe.model_name}</td>
                 <td>{shoe.color}</td>
                 <td>
-                  <img src={shoe.pictured_url} />
+                  <img src={shoe.picture_url} alt="" width="100px" height="100px" />
                 </td>
                 <td>{shoe.bin.bin_number}</td>
                 <td>
-                  <button onClick={deleteShoe(shoe.id)} className="button">
+                  <button onClick={deleteShoe(shoe.id)} className="btn btn danger">
                     Delete
                   </button>
                 </td>
