@@ -93,7 +93,7 @@ class ShoesForm extends React.Component {
                     })}
                     </select>
                   </div>
-                  <button className="btn btn-warning">Add</button>
+                  <button className="btn btn-primary">Create</button>
                 </form>
               </div>
             </div>

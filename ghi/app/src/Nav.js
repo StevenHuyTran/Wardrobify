@@ -31,7 +31,7 @@ function Nav() {
               </NavLink>
             </li>
             <li className="nav-item">
-            <NavLink className="nav-link" to="/shoes/new">New shoes</NavLink>
+            <NavLink className="nav-link" to="/shoes/new">Create a shoe</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/hats">
