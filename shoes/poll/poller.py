@@ -24,7 +24,7 @@ def get_bins():
                 "import_href": bin["href"],
                 "closet_name": bin["closet_name"],
                 "bin_number": bin["bin_number"],
-                "bin_size": bin["bun_size"],
+                "bin_size": bin["bin_size"],
             }
         )
 
