@@ -105,6 +105,7 @@ Copy and Paste the following sample data in Insomnia for Creating a Hat.
 
 For POST REQUEST to Create a Hat.
 Json Body:
+<br>
 {
 "fabric": "Denim",
 "style_name": "Bucket Hatssss",
@@ -118,44 +119,49 @@ Json Body:
 Front End (Hats)
 Navigation
 
-- [x]Should have a link to an Add a Hat Form View (anywhere)
-- [x]Should have a link to Show a List of Hats View
+- [x] Should have a link to an Add a Hat Form View (anywhere)
+- [x] Should have a link to Show a List of Hats View
 
 Add a Hat Form
-[x]Should contain relevant inputs
-[x]Should contain a Style Input
-[x]Should contain a Color Input
-[x]Should contain a Fabric input
-[x]Should contain a Picture URL input
-[x]Should contain a Location dropdown
-[x]On Submit should create a new Hat
-[x]No JS console errors
-[]Verify state updates after adding hat (hat list updates without manually reloading page) AUTOREFRESH
+
+- [x] Should contain relevant inputs
+- [x] Should contain a Style Input
+- [x] Should contain a Color Input
+- [x] Should contain a Fabric input
+- [x] Should contain a Picture URL input
+- [x] Should contain a Location dropdown
+- [x] On Submit should create a new Hat
+- [x] No JS console errors
+- [ ] Verify state updates after adding hat (hat list updates without manually reloading page) AUTOREFRESH
 
 List All Hats View
 Should contain the following info for each record
-[x]Style
-[x]Fabric
-[x]Color
-[x]Location
+
+- [x] Style
+- [x] Fabric
+- [x] Color
+- [x] Location
 
 Stretch Goal
-[x]Added Hats picture to Hats List
-[] Create page for Hat detail.
-[] Create dismiss button on succeful submission message.
 
-[x]Delete Hats Button
-[x]Delete Hats Button works
+- [x] Added Hats picture to Hats List
+- [ ] Create page for Hat detail.
+- [ ] Create dismiss button on succeful submission message.
+
+- [x] Delete Hats Button
+- [x] Delete Hats Button works
 
 Back End
 Hats Resource
-[x]GET request to API should respond with a list of hats
-[x]GET request to API should respond with an appropriate status code
-[x]POST request to API should create a new hat resource
-[x]POST request to API should respond with an appropriate status code
-[x]DELETE request to API should respond with {deleted: true}
-[x]DELETE request to API should respond with appropriate status code
+
+- [x] GET request to API should respond with a list of hats
+- [x] GET request to API should respond with an appropriate status code
+- [x] POST request to API should create a new hat resource
+- [x] POST request to API should respond with an appropriate status code
+- [x] DELETE request to API should respond with {deleted: true}
+- [x] DELETE request to API should respond with appropriate status code
 
 Polling Service
-[x]It should work and create the appropriate Value Objects for the service
-[x]Hat locations should be populated with LocationVOs from hats api, not Locations from wardrobe api
+
+- [x] It should work and create the appropriate Value Objects for the service
+- [x] Hat locations should be populated with LocationVOs from hats api, not Locations from wardrobe api
