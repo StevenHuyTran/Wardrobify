@@ -27,7 +27,7 @@ loadShoes();
 
 async function loadHats() {
   const hatsResponse = await fetch("http://localhost:8090/api/hats/");
-  // console.log(hatsResponse);
+  console.log(hatsResponse);
 
   if (hatsResponse.ok) {
     const data = await hatsResponse.json();
