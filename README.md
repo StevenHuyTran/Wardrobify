@@ -2,13 +2,12 @@
 
 Team:
 
-- Person 1 - Which microservice? STEVEN
+- Steven Tran - Hats microservice
 - Elviza Fallon-Hanify - Shoes microservice
 
 ## Design
 
-## Shoes microservice
-## Shoes Step by Step Installation and getting started
+## Step by Step Installation and getting started
 
 1. Fork the repository https://gitlab.com/stevenhuytran03/microservice-two-shot
 2. Select clone with HTTPS, and copy the link
@@ -22,6 +21,7 @@ Team:
    environment variable named OS being missing. You can safely ignore this.
 8. Once docker is up and running, go to http://localhost:3000/ to see the web app.
 
+## Shoes microservice
 ## Insomnia for Shoes Microservice
 1. Creating bins:
   - POST: http://localhost:8100/api/bins/
@@ -60,53 +60,7 @@ Team:
 
 This microservice contains a model called Hat which allows users to add an instance of Hat Model with the following attributes: fabric, style name, color, picture, and the location of the hat in the wardrobe. The location is a value object that is polled from the Wardrobe API that also polls these attributes: closet name, bin number, bin size, and import href. Value Objects are neccessary because they represent a copy of the data represented in the monolith. This allows a way for microservices to access that data without manipulating the original data but still make new instances and model objects of that data.
 
-## Step-by-step Instructions to run project.
 
-0. Throughout these instructions, console commands will be in brackets.
-
-Example: [code goes here, dont include these outer brackets inside the terminal]
-
-1. Open terminal and make a new directory to gitclone
-
-https://gitlab.com/stevenhuytran03/microservice-two-shot.git
-
-Note: to evaluate the code, proceed through the step-by-step instructions in order, otherwise if you just want to get the application up and running to inspect functionality, skip step 2.
-
-2. Cd into that new directory and open Vscode via [code .]
-
-3. Build images via terminal
-
-[docker-compose build]
-
-4. Compose containers via terminal
-
-[docker-compose up]
-
-5. Ensure all containers are running, if containers stop for some reason, you may need to rebuild and recompose.
-
-Use these docker commands in your terminal if neccessary.
-
-5a. Stop all services first.
-
-5b. To clear your containers, use [docker container prune -f]
-
-5c. [docker volume rm pgdata]
-
-[docker volume create pg data]
-
-[docker-compose up]
-
-6. Run [docker exec -it «api-container-name» bash] and replace «api-container-name» with the API service you wish to evaluate.
-
-7. After you get access to the bash, run
-
-[python manage.py makemigrations]
-
-[python manage.py migrate]
-
-8. On your web browser, go to http://localhost:3000/
-
-9. From here you should be able to navigate through the SPA for Wardrobify.
 
 ## URLS and PORTS
 
