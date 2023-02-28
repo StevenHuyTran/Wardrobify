@@ -172,4 +172,11 @@ Polling Service
 
 - Diagram
 
-  ![picture-of-diagram](https://gitlab.com/stevenhuytran03/microservice-two-shot/-/blob/main/Diagram%20Overview.png)
+  ![picture-of-diagram](https://gitlab.com/stevenhuytran03/microservice-two-shot/-/blob/main/Diagram%20Overview.png)![Main Page](https://user-images.githubusercontent.com/114505839/221970850-46723cef-155e-48a0-8077-f3f1409de68c.PNG)
+
+- Preview
+
+![Uploading Main Page.PNG…]()
+![Create a Shoe](https://user-images.githubusercontent.com/114505839/221970949-40eacbe4-4861-4dd7-bcce-d695d423c25e.PNG)
+![Shoes List](https://user-images.githubusercontent.com/114505839/221970995-4a3632a7-a3fd-430b-999c-823f3f98c7f9.PNG)
+
