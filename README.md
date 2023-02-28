@@ -15,52 +15,59 @@ Team:
 4. Change your directory to the newly cloned repo: cd "repo-name"
 5. To open project in VSCODE : code .
 6. Run : docker volume create pgdata
-         docker-compose build
-         docker-compose up
+   docker-compose build
+   docker-compose up
 7. If you run docker-compose up and if you're on macOS, you'll see a warning about an
    environment variable named OS being missing. You can safely ignore this.
 8. Once docker is up and running, go to http://localhost:3000/ to see the web app.
 
 ## Shoes microservice
+
 ## Insomnia for Shoes Microservice
-1. Creating bins:
-  - POST: http://localhost:8100/api/bins/
-  - Layout for JSON body: {
-	"closet_name": "fill in name here",
-	"bin_number": "fill in number",
-	"bin_size": "fill in number
-}
+
+1. Use Insomnia to Create a bin to get started:
+
+- POST: http://localhost:8100/api/bins/
+- Layout for JSON body: {
+  "closet_name": "fill in name here",
+  "bin_number": "fill in number",
+  "bin_size": "fill in number
+  }
+
 2. Checking list of bins:
-  - GET: http://localhost:8100/api/bins/
-  - Layout for body: none
+
+- GET: http://localhost:8100/api/bins/
+- Layout for body: none
+
 3. Checking list of Shoes:
-  - GET: http://localhost:8080/api/shoes/
-  - Layout for body: none
+
+- GET: http://localhost:8080/api/shoes/
+- Layout for body: none
+
 4. Creating shoes:
-  - POST: http://localhost:8080/api/shoes/
-  - Layout for JSON body: {
-	"manufacturer": "fill in manufacturer here",
-	"model_name": "fill in model name here",
-	"color": "fill in color here",
-	"picture_url": "fill in picture adress here",
-	"bin": "fill in bin info here"
-}
+
+- POST: http://localhost:8080/api/shoes/
+- Layout for JSON body: {
+  "manufacturer": "fill in manufacturer here",
+  "model_name": "fill in model name here",
+  "color": "fill in color here",
+  "picture_url": "fill in picture adress here",
+  "bin": "fill in bin info here"
+  }
+
 5. Checking particular shoes details:
-  - GET: http://localhost:8080/api/shoes/"fill in bin id here"/
-  - Layout for body: none
+
+- GET: http://localhost:8080/api/shoes/"fill in bin id here"/
+- Layout for body: none
+
 6. Delete particular shoes:
-  - DELETE: http://localhost:8080/api/shoes/"fill in bin id here"/
-  - Layout for body: none
 
-
-
-
+- DELETE: http://localhost:8080/api/shoes/"fill in bin id here"/
+- Layout for body: none
 
 ## Hats microservice
 
 This microservice contains a model called Hat which allows users to add an instance of Hat Model with the following attributes: fabric, style name, color, picture, and the location of the hat in the wardrobe. The location is a value object that is polled from the Wardrobe API that also polls these attributes: closet name, bin number, bin size, and import href. Value Objects are neccessary because they represent a copy of the data represented in the monolith. This allows a way for microservices to access that data without manipulating the original data but still make new instances and model objects of that data.
-
-
 
 ## URLS and PORTS
 

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./index.css";
 
 function MainPage() {
   return (
@@ -10,6 +11,15 @@ function MainPage() {
           you!
         </p>
       </div>
+      <img
+        src="https://guardianselfstorage.com/wp-content/uploads/2021/01/Wooden-Hanger-Image-980x653.jpg"
+        alt="image description"
+        width="500"
+        className="rounded-img"
+        // style="border-radius: 10px"
+        // style="border-radius: 10px;"
+      />
+
       {/* <div className="row justify-content-evenly">
         <div className="col-6 col-sm-4 shadow p-3 mb-5 bg-dark rounded">
         <Link to="/shoes">
